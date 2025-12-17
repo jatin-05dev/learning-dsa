@@ -1,0 +1,96 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n = 5; // Size of the patterns
+
+    // 1. Square Pattern
+    cout << "1. Square Pattern:\n";
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) cout << "* ";
+        cout << endl;
+    }
+
+    // 2. Right Triangle
+    cout << "\n2. Right Triangle:\n";
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=i; j++) cout << "* ";
+        cout << endl;
+    }
+
+    // 3. Inverted Right Triangle
+    cout << "\n3. Inverted Right Triangle:\n";
+    for(int i=n; i>=1; i--) {
+        for(int j=1; j<=i; j++) cout << "* ";
+        cout << endl;
+    }
+
+    // 4. Mirrored Right Triangle
+    cout << "\n4. Mirrored Right Triangle:\n";
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=n-i; j++) cout << "  ";
+        for(int k=1; k<=i; k++) cout << "* ";
+        cout << endl;
+    }
+
+    // 5. Pyramid Pattern
+    cout << "\n5. Pyramid:\n";
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=n-i; j++) cout << " ";
+        for(int k=1; k<=2*i-1; k++) cout << "*";
+        cout << endl;
+    }
+
+    // 6. Inverted Pyramid
+    cout << "\n6. Inverted Pyramid:\n";
+    for(int i=n; i>=1; i--) {
+        for(int j=1; j<=n-i; j++) cout << " ";
+        for(int k=1; k<=2*i-1; k++) cout << "*";
+        cout << endl;
+    }
+
+    // 7. Hollow Square
+    cout << "\n7. Hollow Square:\n";
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=n; j++) {
+            if(i==1 || i==n || j==1 || j==n) cout << "* ";
+            else cout << "  ";
+        }
+        cout << endl;
+    }
+
+    // 8. Diamond Pattern
+    cout << "\n8. Diamond:\n";
+    // Upper part
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=n-i; j++) cout << " ";
+        for(int k=1; k<=2*i-1; k++) cout << "*";
+        cout << endl;
+    }
+    // Lower part
+    for(int i=n-1; i>=1; i--) {
+        for(int j=1; j<=n-i; j++) cout << " ";
+        for(int k=1; k<=2*i-1; k++) cout << "*";
+        cout << endl;
+    }
+
+    // 9. Half Pyramid (Numbers)
+    cout << "\n9. Number Pyramid:\n";
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=i; j++) cout << j << " ";
+        cout << endl;
+    }
+
+    // 10. Floyd's Triangle
+    cout << "\n10. Floyd's Triangle:\n";
+    int num = 1;
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=i; j++) {
+            cout << num << " ";
+            num++;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
